@@ -1,0 +1,36 @@
+<mat-card>
+
+    
+    <mat-list class="manDiv" *ngFor="let pat of thePatient">
+      Name:  {{pat.name}} <br/>
+      Surname: {{pat.surname}}<br/>
+      Age:  {{pat.age}}<br/>
+     Patient ID :  {{pat.patientID}}<br/>
+         
+   </mat-list>
+    
+       <br/>
+
+    <div *ngIf="empty">
+    
+      
+          your values is empty
+     
+    </div>
+     
+           
+      <form>
+     
+     </form>
+   
+    
+     <button  mat-button routerLink="/admin" class="butt" aria-hidden="false" aria-label="add">
+      Back
+   </button>
+
+  
+    
+    </mat-card>
+ 
+ 
+   

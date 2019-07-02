@@ -1,0 +1,31 @@
+<mat-card class="manDiv" >
+
+   
+    
+<div>
+    <mat-form-field class="manDiv"><input [(ngModel)]="newPatName"  matInput placeholder="Name" value=""></mat-form-field> <br/>   
+    
+       <mat-form-field class="manDiv"> <input [(ngModel)]="newPatSurname"  matInput placeholder="Surname" value=""> </mat-form-field> <br/>  
+
+       <mat-form-field class="manDiv"> <input [(ngModel)]="newPatAge"  matInput placeholder="Age" value=""> </mat-form-field> <br/>  
+       
+       <mat-form-field class="manDiv"> <input [(ngModel)]="newPatId"  matInput placeholder="patientID" value=""> </mat-form-field> <br/>  
+    
+       <button  class="butt" mat-button (click)="addPatients(newPatName,newPatSurname,newPatAge,newPatId)" ><mat-icon aria-hidden="false" aria-label="add">add</mat-icon></button>
+</div>     
+      <form>
+     
+     </form>
+
+    </mat-card>
+
+<mat-card>
+<mat-list *ngFor="let pat of patient">
+
+    <button (click)="checkPat(pat)"  mat-button  class="butt"  aria-hidden="false" aria-label="add" routerLink="/patientDetails">
+        {{pat.name}}
+     </button>
+   
+
+ </mat-list>
+    </mat-card>

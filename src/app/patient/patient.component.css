@@ -1,0 +1,34 @@
+.mycard {
+    background-color: #FFF;
+   color:#FF0000;
+   font-family: Impact;
+  }
+  .mycardMenu {
+    background-color:#fff;
+   color:#FF0000;
+   font-family: Impact;
+   right:-1250px;
+   
+  
+  }
+  .headerImage {
+    background-image: url('C:\Users\CodeTribe\DrNcube\src\assets\img\cardiogram.png');
+    background-size: cover;
+
+    width: 45px;
+    height: 45px;
+  }
+.manDiv
+{
+    background-color:#fff;
+    color:#FF0000;
+   font-family: Impact;
+
+}
+.butt
+{
+   
+    color:#FF0000;
+    font-family: Impact;
+
+}

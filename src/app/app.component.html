@@ -1,0 +1,39 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<mat-card class="mycard">
+  <mat-card-header>
+    <div mat-card-avatar class="headerImage"></div>
+    <mat-card-title> {{title}}</mat-card-title>
+    
+  </mat-card-header>
+ 
+  <div >
+
+    <button class="mycardMenu" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        <mat-icon>fingerprint</mat-icon>
+      </button>
+    <!--The content below is only a placeholder and can be replaced.-->
+      <mat-menu class="mycardMenu" #menu="matMenu">
+    
+        <!--Admin-->
+        <button class="butt" routerLink="/admin" mat-menu-item>
+          <mat-icon  color="warn">local_library</mat-icon>
+          <span class="butt"> Admin </span>
+        </button>
+    
+        <!--Patient-->
+        <button class="butt" routerLink="/patient" mat-menu-item > 
+          <mat-icon  color="warn">person</mat-icon>
+          <span class="butt">Patient</span>
+        </button>
+   
+         <!--Doctor-->
+         <button class="butt" routerLink="/doctor" mat-menu-item > 
+          <mat-icon  color="warn">local_pharmacy</mat-icon>
+          <span class="butt">Doctor</span>
+        </button>
+
+      </mat-menu>
+    
+     </div>
+     </mat-card>
+<router-outlet></router-outlet>
