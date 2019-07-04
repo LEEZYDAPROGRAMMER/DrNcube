@@ -1,1 +1,14 @@
-<p>patient works!</p>
+<mat-card class="manDiv" >
+   
+        <mat-list *ngFor="let pat of patient">
+    
+        <button (click)="takePerson(pat)"  mat-button   class="butt"  routerLink="/patientAppointment">
+          Name:  {{pat.name}} <br/>
+           Surname:  {{pat.surname}} <br/>
+          Age:  {{pat.age}} <br/>
+           ID: {{pat.patientID}} <br/>
+        </button>
+       
+    
+     </mat-list>
+        </mat-card> 

@@ -6,13 +6,22 @@ import { Injectable } from '@angular/core';
 export class ServiceService {
   patients=[{name:"santiago",surname:" ncube",age:12,patientID:1}];
   thePatient=[];
+ //tag team appointment
+  appointments=[];
+  tempPerson=[];
+  
+  
 
   newPatName : string="";
   newPatSurname : string="";
   newPatAge:number=null;
   newPatId:number=null;
   
+  bookDate:string="";
+  bookReason:string="";
+  bookDoctor:string="";
   
+
    empty=false;
    toVal=null;
 
@@ -21,6 +30,11 @@ export class ServiceService {
 
     return this.patients;
 
+    }
+    getAppoints()
+    {
+
+      return this.appointments
     }
 
     addPatients(newPatName,newPatSurname,newPatAge,newPatId)
@@ -46,6 +60,41 @@ export class ServiceService {
       this.newPatId=null;
      
     }
+
+//tag team appointment
+    takePerson(pat)
+    {
+      let index = this.patients.indexOf(pat)
+      this.tempPerson.splice(0,1);
+      this.tempPerson.push({name: this.patients[index].name, surname: this.patients[index].surname, age: this.patients[index].age, patientID: this.patients[index].patientID})
+      
+    }
+//tag team appointment
+    addAppoint(bookDate,bookReason,bookDoctor)
+    {
+       
+     
+   
+      if(bookDate!=null&&bookReason!=null&&bookDoctor!=null)
+      {
+        this.appointments.push({name:this.tempPerson[0].name,date: bookDate,reason: bookReason,doctor: bookDoctor});
+       
+        this.empty=false;
+     
+      }
+      else
+      {
+        this.empty=true;
+      } 
+
+      this.bookDate=null;
+      this.bookReason=null;
+      this.bookDoctor=null;
+
+      
+    }
+
+
     getPat()
     {
     
@@ -65,7 +114,6 @@ export class ServiceService {
       else
       {
         this.thePatient.splice(0,1);
-      this.newPatName=null;
       this.thePatient.push({name: this.patients[index].name, surname: this.patients[index].surname, age: this.patients[index].age, patientID: this.patients[index].patientID})
       }
 

@@ -1,0 +1,36 @@
+<mat-card class="manDiv" >
+
+   
+    
+    <div>
+        <mat-form-field class="manDiv"><input [(ngModel)]="bookDate"  matInput placeholder="Date" value=""></mat-form-field> <br/>   
+        
+           <mat-form-field class="manDiv"> <input [(ngModel)]="bookReason"  matInput placeholder="Reason" value=""> </mat-form-field> <br/>  
+    
+           <mat-form-field class="manDiv"> <input [(ngModel)]="bookDoctor"  matInput placeholder="Doctor" value=""> </mat-form-field> <br/>  
+           
+          
+        
+           <button  class="butt" mat-button (click)="addAppoint(bookDate,bookReason,bookDoctor)" ><mat-icon aria-hidden="false" aria-label="add">add</mat-icon></button>
+    </div>     
+          <form>
+         
+         </form>
+    
+        </mat-card>
+    
+  
+        <mat-card>
+   
+        <mat-list *ngFor="let appoint of appoints">
+    
+        <p mat-button  class="manDiv" >
+          Name of Patient:  {{appoint.name}} <br/>
+          Date of Appointment:  {{appoint.date}} <br/>
+          Reason:   {{appoint.reason}} <br/>
+          Name of Doctor:  {{appoint.doctor}} 
+        </p>
+       
+    
+     </mat-list>
+        </mat-card>

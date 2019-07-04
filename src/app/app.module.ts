@@ -10,13 +10,15 @@ import { AdminComponent } from './admin/admin.component';
 import { PatientDetailsComponent } from './patient-details/patient-details.component';
 import { PatientComponent } from './patient/patient.component';
 import { DoctorComponent } from './doctor/doctor.component';
+import { PatientAppointmentComponent } from './patient-appointment/patient-appointment.component';
 @NgModule({
   declarations: [
     AppComponent,
     AdminComponent,
     PatientDetailsComponent,
     PatientComponent,
-    DoctorComponent
+    DoctorComponent,
+    PatientAppointmentComponent
   ],
   imports: [
     BrowserModule,
