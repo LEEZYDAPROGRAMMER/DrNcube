@@ -6,9 +6,11 @@ import { Injectable } from '@angular/core';
 export class ServiceService {
   patients=[{name:"santiago",surname:" ncube",age:12,patientID:1}];
   thePatient=[];
+
  //tag team appointment
   appointments=[];
   tempPerson=[];
+
   
   
 
@@ -61,7 +63,7 @@ export class ServiceService {
      
     }
 
-//tag team appointment
+//identify the patient 
     takePerson(pat)
     {
       let index = this.patients.indexOf(pat)
@@ -69,7 +71,7 @@ export class ServiceService {
       this.tempPerson.push({name: this.patients[index].name, surname: this.patients[index].surname, age: this.patients[index].age, patientID: this.patients[index].patientID})
       
     }
-//tag team appointment
+//add patient appointment
     addAppoint(bookDate,bookReason,bookDoctor)
     {
        
@@ -81,6 +83,7 @@ export class ServiceService {
        
         this.empty=false;
      
+
       }
       else
       {
@@ -93,8 +96,15 @@ export class ServiceService {
 
       
     }
+    // the method that will split different patients appointments coming soon after lunch... :)
 
+    getPerAppoints()
+    {
+          
+     
+    }
 
+// get one patient
     getPat()
     {
     

@@ -3,13 +3,27 @@
    
     
     <div>
-        <mat-form-field class="manDiv"><input [(ngModel)]="bookDate"  matInput placeholder="Date" value=""></mat-form-field> <br/>   
-        
-           <mat-form-field class="manDiv"> <input [(ngModel)]="bookReason"  matInput placeholder="Reason" value=""> </mat-form-field> <br/>  
+
+ <!-- date input -->
+        <mat-form-field class="manDiv">
+            <input class="manDiv" [(ngModel)]="bookDate" matInput [matDatepicker]="picker" placeholder="Choose a date">
+            <mat-datepicker-toggle class="manDiv" [(ngModel)]="bookDate"  matSuffix [for]="picker"> </mat-datepicker-toggle>
+            <mat-datepicker class="manDiv" [(ngModel)]="bookDate"  #picker> </mat-datepicker>
+          </mat-form-field> <br/>
+
+ <!-- Reason input -->
+        <mat-form-field class="manDiv"> <input [(ngModel)]="bookReason"  matInput placeholder="Reason" value=""> </mat-form-field> <br/>  
     
-           <mat-form-field class="manDiv"> <input [(ngModel)]="bookDoctor"  matInput placeholder="Doctor" value=""> </mat-form-field> <br/>  
-           
-          
+ <!-- doctor input -->
+           <mat-form-field class="manDiv">
+            <mat-label class="manDiv">Doctor</mat-label>
+            <mat-select [(ngModel)]="bookDoctor" disableRipple class="manDiv">
+                  <mat-option class="manDiv" value="Dr Ncube">Dr Ncube</mat-option>
+              <mat-option class="manDiv" value="Dr Moodley">Dr Moodley</mat-option>
+              <mat-option class="manDiv" value="Dr Pillay">Dr Pillay</mat-option>
+              <mat-option class="manDiv" value="Dr Naidoo">Dr Naidoo</mat-option>
+            </mat-select>
+          </mat-form-field>
         
            <button  class="butt" mat-button (click)="addAppoint(bookDate,bookReason,bookDoctor)" ><mat-icon aria-hidden="false" aria-label="add">add</mat-icon></button>
     </div>     
